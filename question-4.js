@@ -17,12 +17,16 @@ const alphaTech = [
 
 const allEmployees = alphaTech.concat(betaSoft, gammaDev);
 
+/*function allCompany(){
+สามารถ declare function เพื่อเพิ่ม Key: value ของบริษัทได้ ---> ทำไม่เป็นครับ TT โปรดชี้นำแสงสว่างให้ข้าที
+}*/
+
 const result = allEmployees.filter((employee) => {
-  return employee.department === 'Enginering' && employee.age > 20;
+  return employee.department === 'Engineering' && employee.age >= 20;
 }).map((employee) => {
   return {
     name: employee.name,
-    company: '' 
+    company:  employee.company
   };
 });
 
