@@ -15,11 +15,18 @@ const alphaTech = [
   ];
   
 
-const allEmployees = alphaTech.concat(betaSoft, gammaDev);
+  function addCompany(employees, companyName) {
+    return employees.map(employee => ({
+      ...employee,
+      company: companyName
+    }));
+  }
 
-/*function allCompany(){
-สามารถ declare function เพื่อเพิ่ม Key: value ของบริษัทได้ ---> ทำไม่เป็นครับ TT โปรดชี้นำแสงสว่างให้ข้าที
-}*/
+const alphaWithCompany = addCompany(alphaTech, 'alphaTech');
+const betaWithCompany = addCompany(betaSoft, 'betaSoft');
+const gammaWithCompany = addCompany(gammaDev, 'gammaDev');
+
+  const allEmployees = alphaWithCompany.concat(betaWithCompany, gammaWithCompany);
 
 const result = allEmployees.filter((employee) => {
   return employee.department === 'Engineering' && employee.age >= 20;
